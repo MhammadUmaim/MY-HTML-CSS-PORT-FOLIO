@@ -1,0 +1,33 @@
+p{
+        color: gold;
+        font-size: x-large;
+}
+address{
+        color: gold;
+        font-size: x-large;
+}
+h2{
+       color: goldenrod; 
+       font-size: xx-large;
+}
+a{
+        color: darkgoldenrod;
+        /* font-size: larger; */
+}
+a{
+        font-size:large;
+        font-family: monospace;
+}
+span {
+        visibility: hidden;
+ }  
+p{
+   font-family: cursive;
+}   
+address{
+        font-family: cursive;
+}  
+h2{
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: dotted
+}

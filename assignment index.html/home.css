@@ -1,0 +1,52 @@
+div{
+   width: 50%;  margin: auto;}
+span {
+      visibility: hidden; }
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: goldenrod;
+    text-align: center;
+   
+}
+a{
+    color: darkgoldenrod;}
+p{
+    color: gold; 
+       /* font-family :Verdana, Geneva, Tahoma, sans-serif*/ 
+      }
+ p >a{
+    font-size: larger;
+ }
+ center >h1{
+    font-size: xx-large;
+ }
+ p{
+   text-align: center;
+ }
+ p{
+  font-family: cursive;
+ }
+ a{
+   font-size:large;
+   font-family: monospace;
+ }
+ .register {
+   font-size: x-large;
+ }
+ a :link{
+   color : red;
+   text-decoration:none
+ }
+ a :visited{
+   color: blue; 
+}
+a :hover{
+   color: deeppink;
+   text-decoration: underline;
+}
+a :active{
+   color: aqua;
+}
+
+
+

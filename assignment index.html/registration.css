@@ -1,0 +1,30 @@
+h1{
+    color: goldenrod;
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: bolder;
+    font-weight: 900;
+}
+form{
+    color: aquamarine;
+}
+p{
+    color: gold;
+}
+::placeholder{
+    color: aquamarine;
+}
+a{
+    color: darkgoldenrod;
+    font-size: larger;
+}
+input{
+    color: black;
+}
+form{
+    font-family: cursive;
+}
+button{
+    color: aquamarine;
+    text-align: center;
+}
