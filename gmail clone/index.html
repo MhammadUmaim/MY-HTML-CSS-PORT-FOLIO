@@ -1,0 +1,277 @@
+     <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gmail Clone</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            /* Universal reset */
+            * {
+                box-sizing: border-box;
+            }
+    
+            /* Top navigation bar */
+            .navbar {
+                background-color: 	#f1f3f4;
+                color: white;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+    
+            .navbar .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+    
+            .navbar .search-bar {
+                flex: 1;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+    
+            .navbar .search-bar input {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 24px;
+                outline: none;
+            }
+    
+            .navbar .actions {
+                display: flex;
+                align-items: center;
+            }
+    
+            .navbar .actions img {
+                width: 24px;
+                height: 24px;
+                margin-left: 15px;
+                cursor: pointer;
+            }
+    
+            /* Sidebar */
+            .sidebar {
+                width: 250px;
+                background-color: #f1f3f4;
+                height: 100vh;
+                padding-top: 70px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                transition: transform 0.3s ease;
+            }
+    
+            .sidebar .compose-btn {
+                background-color: #d93025;
+                color: white;
+                padding: 10px 20px;
+                margin: 0 20px;
+                border: none;
+                border-radius: 24px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+    
+            .sidebar .compose-btn:hover {
+                background-color: #c5221f;
+            }
+    
+            .sidebar .menu {
+                margin-top: 30px;
+                padding: 0 20px;
+            }
+    
+            .sidebar .menu .menu-item {
+                display: flex;
+                align-items: center;
+                padding: 12px 0;
+                cursor: pointer;
+                font-size: 14px;
+                border-radius: 24px;
+                padding-left: 10px;
+            }
+    
+            .sidebar .menu .menu-item img {
+                width: 20px;
+                margin-right: 15px;
+            }
+    
+            .sidebar .menu .menu-item:hover {
+                background-color: #e8eaed;
+            }
+    
+            /* Main Content */
+            .main-content {
+                margin-left: 250px;
+                padding: 90px 20px 20px 20px;
+                transition: margin-left 0.3s ease;
+            }
+    
+            .main-content .inbox {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 20px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+    
+            .main-content .inbox h2 {
+                margin-top: 0;
+            }
+    
+            .main-content .inbox .email-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .main-content .inbox .email-list .email-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 10px;
+                border-bottom: 1px solid #ddd;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+            }
+    
+            .main-content .inbox .email-list .email-item:hover {
+                background-color: #f1f3f4;
+            }
+    
+            .main-content .inbox .email-list .email-item .subject {
+                font-weight: bold;
+            }
+    
+            .main-content .inbox .email-list .email-item .time {
+                color: #888;
+            }
+    
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .sidebar {
+                    transform: translateX(-250px);
+                }
+    
+                .main-content {
+                    margin-left: 0;
+                    padding: 20px;
+                }
+    
+                .sidebar.show {
+                    transform: translateX(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Top Navigation Bar -->
+        <div class="navbar">
+            <img src="./ASSETS/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="" height="30px" width="30px">
+            <div class="logo"><img src="./ASSETS/Gmail-Emblem.png" alt="Gmail" height="40px" width="80px"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search mail">
+            </div>
+            <div class="actions">
+                <img src="https://img.icons8.com/material-outlined/24/0000/settings.png" alt="Settings">
+                <img src="https://img.icons8.com/material-outlined/24/0000/help.png" alt="Help">
+                <img src="https://img.icons8.com/material-outlined/24/0000/user.png" alt="User">
+            </div>
+        </div>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="compose-btn">Compose</button>
+            <div class="menu">
+                <div class="menu-item">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/inbox.png" alt="Inbox">
+                    <span>Inbox</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/star.png" alt="Starred">
+                    <span>Starred</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/send.png" alt="Sent">
+                    <span>Sent</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/delete.png" alt="Trash">
+                    <span>Trash</span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="inbox">
+                <h2>Inbox</h2>
+                <ul class="email-list">
+                    <li class="email-item">
+                        <div class="subject">Meeting with John</div>
+                        <div class="time">10:30 AM</div>
+                    </li>
+                    <li class="email-item">
+                        <div class="subject">Project Update</div>
+                        <div class="time">9:00 AM</div>
+                    </li>
+                    <li class="email-item">
+                        <div class="subject">Weekend Plans</div>
+                        <div class="time">Yesterday</div>
+                    </li>
+
+                    <!-- Add more email items as needed -->
+                </ul>
+            </div>
+        </div>
+    
+        <!-- <script>
+            // Responsive sidebar toggle
+            const sidebar = document.querySelector('.sidebar');
+    
+            document.querySelector('.navbar .logo').addEventListener('click', () => {
+                sidebar.classList.toggle('show');
+            });
+        </script> -->
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
